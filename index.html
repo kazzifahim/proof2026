@@ -24,7 +24,7 @@
       }
     </style>
   </head>
-  <body class="bg-light">
+ <body class="bg-light">
     <div class="container">
       <div class="form-container">
         <h4 class="text-center mb-4">Proof of Submission (PSR) for <br> Unilever Bangladesh Limited</h4>
@@ -124,8 +124,22 @@
             </div>
             <small class="text-muted">
                     Only PDF and JPG allowed.
-                    Maximum 4MB.
+                    Maximum 10MB.
                 </small>
+
+          <!-- <div class="form-group form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="age" />
+            <label class="form-check-label" for="age"
+              >Check if you are over 18 years old</label
+            >
+          </div>
+          
+          <div class="form-group form-check">
+            <input class="form-check-input" type="checkbox" id="ex" required />
+            <label class="form-check-label" for="ex"
+              >By checking this box I certify that I am agree with the data
+              terms and policies.
+            </label> -->
           </div>
           <button type="submit" class="btn btn-primary btn-block">
             Submit
@@ -142,6 +156,18 @@ const form = document.forms["submit-to-google-sheet"];
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const formData = new FormData(form);
+
+    // Checkbox values
+    // const ex = document.getElementById("ex").checked;
+    // const age = document.getElementById("age").checked;
+
+    // formData.append("age", age ? "Yes" : "No");
+    // formData.append("ex", ex ? "Yes" : "No");
+
+    // =========================
+    // FILE UPLOAD (PDF + JPG)
+    // =========================
     const fileInput = document.getElementById("media");
 
     if (fileInput.files.length > 0) {
@@ -181,6 +207,10 @@ form.addEventListener("submit", async (e) => {
     }
 });
 
+
+// =========================
+// SUBMIT FUNCTION
+// =========================
 async function submitForm(formData) {
 
     const submitButton = document.querySelector("button[type='submit']");
