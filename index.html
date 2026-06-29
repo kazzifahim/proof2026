@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proof of Submission (PSR) </title>
-    <link rel="icon" type="image/png" sizes="148x148" href="favicon.png">
+    
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,18 +27,15 @@
  <body class="bg-light">
     <div class="container">
       <div class="form-container">
-        <h4 class="text-center mb-4">Proof of Submission (PSR) for <br> Unilever Bangladesh Limited</h4>
+        <h4 class="text-center mb-4">Proof of Submission (PSR) for <br> Unilever Bangladesh</h4>
         <form id="submit-to-google-sheet">
           <div class="form-group">
-            <label for="entity_type">Entity Type :</label>
-            <input
-              class="form-control"
-              type="text"
-              name="entity_type"
-              id="entity_type"
-              placeholder=""
-              required
-            />
+            <label for="loc">Entity Type :</label>
+            <select class="form-control" name="entity_type" id="entity_type" required>
+              <option value="" disabled selected hidden>Choose...</option>
+              <option value="individual">Individual</option>
+              <option value="company">Company</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="tin_no">TIN No :</label>
